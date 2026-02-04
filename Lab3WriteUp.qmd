@@ -404,13 +404,23 @@ Create a data frame `ladder` with the following data. Note your data frame shoul
 | 1    | 6    |    5 | 0    | 18   |   11 |
 | 0    | 8    |    6 | 1    | 18   |   11 |
 
+**Solution**
+
+```{r}
+x = c(0,0,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1)
+y = c(0,20,0,20,2,2,4,4,6,6,8,8,10,10,12,12,14,14,16,16,18,18)
+group = rep(1:11, each =2)
+ladder = data.frame(col1 = x, col2 = y, col3 = group)
+```
+
 
 
 ## Part b
 Remove `#|eval: false` in the code below. The result should look like a ladder and a very rectangular house if part a is correct.
 
+**Solution**
+
 ```{r}
-#| eval: false
 #| label: fig-ladder
 #| fig-cap: "A ladder."
 #| fig-width: 3
@@ -440,6 +450,8 @@ $$\mathbf{T} = \mathbf{A} \mathbf{M}_h.$$
 Recall, 
 $$\mathbf{M}_h = \begin{bmatrix} 1 & 0 \\ k & 1 \end{bmatrix}$$
 and use $k=0.5.$
+
+**Solution**
 
 ## Part d
 Create a data frame `leaning.ladder` with the `x` and `y` equal to the first and second column of $\mathbf{T}$, respectively, and the same values of `group` from `ladder`. 
