@@ -152,10 +152,10 @@ Compute the points $p_0$, $p_1$, $p_2$, and $p_3$.
 
 **Solution**
 ```{r}
-p0 <- c(0, 0)
-p1 <- c(1, 5)
-p2 <- c(-6, 14)
-p3 <- c(-7, 9)
+(p0 = c(0, 0))
+(p1 = c(1, 5))
+(p2 = c(-6, 14))
+(p3 = c(-7, 9))
 ```
 
 ## Part e
@@ -163,8 +163,8 @@ Copy and paste the code for the unit square. Edit the code to draw the segments 
 
 **Solution**
 ```{r}
-#| label: fig-unitsquare2
-#| fig-cap: "The unit square 2."
+#| label: fig-shape2
+#| fig-cap: "Shape 2."
 #| fig-width: 3
 #| fig-height: 3
 #| scale: "80%"
@@ -224,10 +224,10 @@ Compute the points $p_0$, $p_1$, $p_2$, and $p_3$.
 
 **Solution**
 ```{r}
-p0 = c(0, 0)
-p1 = c(1, 2)
-p2 = c(5, 6)
-p3 = c(2, 4)
+(p0 = c(0, 0))
+(p1 = c(1, 2))
+(p2 = c(3, 6))
+(p3 = c(2, 4))
 ```
 
 ## Part e
@@ -235,8 +235,8 @@ Copy and paste the code for plotting the unit square. Edit the code to draw the 
 
 **Solution**
 ```{r}
-#| label: fig-unitsquare3
-#| fig-cap: "The unit square 3."
+#| label: fig-shape3
+#| fig-cap: "Shape 3."
 #| fig-width: 3
 #| fig-height: 3
 #| scale: "80%"
@@ -261,6 +261,8 @@ Interestingly, the determinant of $\mathbf{A}$ gives us the area of the shape pl
 det(A)
 ```
 
+The area is 0 because the shape is a straight line.
+
 # Question 3
 We can conduct a shear transformation that keeps the area of the shape the same but horizontally or vertically slants the object. 
 
@@ -280,23 +282,23 @@ $$\mathbf{M}_v = \begin{bmatrix} 1 & k=0.5 \\ 0 & 1 \end{bmatrix} ~~~~~ \textrm{
 **Solution**
 
 ```{r}
-(M = matrix(data = c(1, 0.5, 0, 1), nrow=2, ncol=2, byrow=T))
-(A = matrix(data = c(1, -7, 5, 9), nrow=2, ncol=2, byrow=T))
+M = matrix(data = c(1, 0.5, 0, 1), nrow=2, ncol=2, byrow=T)
+A = matrix(data = c(1, -7, 5, 9), nrow=2, ncol=2, byrow=T)
 (T = A%*%M)
 ```
 ```{r}
 det(T)
 ```
 ```{r}
-p0 <- c(0, 0)
-p1 <- c(1, 5)
-p2 <- c(-5.5, 16.5)
-p3 <- c(-6.5, 11.5)
+(p0 = c(0, 0))
+(p1 = c(1, 5))
+(p2 = c(-5.5, 16.5))
+(p3 = c(-6.5, 11.5))
 ```
 
 ```{r}
-#| label: fig-unitsquare4
-#| fig-cap: "The unit square 4."
+#| label: fig-shape4
+#| fig-cap: "Shape 4."
 #| fig-width: 3
 #| fig-height: 3
 #| scale: "80%"
@@ -312,7 +314,7 @@ ggplot() +
   # ylim(-5, 25) +
   labs(x = "x", y = "y")
 ```
-The area of this shape is the same as the are of the shape in question 1, although it looks different. Through a vertical shear, the longer sides of this shape have been stretched, while the shorter sides have become shorter, stretching the parallelogram a bit.
+The area of this shape is the same as the area of the shape in question 1, although it looks different. Through a vertical shear, the longer sides of this shape have been stretched, while the shorter sides have become shorter, distorting the parallelogram a bit.
 
 ## Part b
 Use the following to generate a new shape. Compare the shape and its area to your answer in Questions 1 and the vertical shear transform in part (a).
@@ -322,22 +324,22 @@ $$ \mathbf{M}_h = \begin{bmatrix} 1 & 0 \\ k=0.5 & 1 \end{bmatrix}~~~~~ \textrm{
 **Solution**
 
 ```{r}
-(M = matrix(data = c(1, 0, 0.5, 1), nrow=2, ncol=2, byrow=T))
+M = matrix(data = c(1, 0, 0.5, 1), nrow=2, ncol=2, byrow=T)
 (T = A%*%M)
 ```
 ```{r}
 det(T)
 ```
 ```{r}
-p0 <- c(0, 0)
-p1 <- c(-2.5, 9.5)
-p2 <- c(-9.5, 18.5)
-p3 <- c(-7, 9)
+(p0 = c(0, 0))
+(p1 = c(-2.5, 9.5))
+(p2 = c(-9.5, 18.5))
+(p3 = c(-7, 9))
 ```
 
 ```{r}
-#| label: fig-unitsquare5
-#| fig-cap: "The unit square 5."
+#| label: fig-shape5
+#| fig-cap: "Shape 5."
 #| fig-width: 3
 #| fig-height: 3
 #| scale: "80%"
@@ -353,7 +355,7 @@ ggplot() +
   # ylim(-5, 25) +
   labs(x = "x", y = "y")
 ```
-The area of this shape is the same as the are of the shape in question 1 and the vertical shear in part a, although it looks different. This time the shorter sides of this shape have been stretched, while the longer sides have become shorter, stretching the parallelogram in the opposite way.
+The area of this shape is the same as the area of the shape in question 1 and the vertical shear in part a, although it looks different. This time the shorter sides of this shape have been stretched, while the longer sides have become shorter, stretching the parallelogram in the opposite way.
 
 ## Part c
 Can we shear vertically and horizontally at the same time? Use the following to generate a new shape. Compare the shape and its area to your answers in parts (a) and (b).
@@ -363,7 +365,7 @@ $$\mathbf{M}_{vh} = \begin{bmatrix} 1 & k=0.5 \\ k=0.5 & 1 \end{bmatrix} ~~~~~ \
 **Solution**
 
 ```{r}
-(M = matrix(data = c(1, 0.5, 0.5, 1), nrow=2, ncol=2, byrow=T))
+M = matrix(data = c(1, 0.5, 0.5, 1), nrow=2, ncol=2, byrow=T)
 (T = A%*%M)
 ```
 ```{r}
@@ -371,15 +373,15 @@ det(T)
 ```
 
 ```{r}
-p0 <- c(0, 0)
-p1 <- c(-2.5, 9.5)
-p2 <- c(-9, 21)
-p3 <- c(-6.5, 11.5)
+(p0 = c(0, 0))
+(p1 = c(-2.5, 9.5))
+(p2 = c(-9, 21))
+(p3 = c(-6.5, 11.5))
 ```
 
 ```{r}
-#| label: fig-unitsquare6
-#| fig-cap: "The unit square 6."
+#| label: fig-shape6
+#| fig-cap: "Shape 6."
 #| fig-width: 3
 #| fig-height: 3
 #| scale: "80%"
@@ -395,7 +397,7 @@ ggplot() +
   # ylim(-5, 25) +
   labs(x = "x", y = "y")
 ```
-This time both the area of the shape and its appearance have changed. Since we applied both a vertical and horizontal shear, both the short and long sides have been changed to be shorter. The shape therefore looks very compressed, and the area changed from 44 (in question 1 and parts a and b) to 33.
+This time both the area of the shape and its appearance have changed. Since we applied both a vertical and horizontal shear, both the short and long sides have been shortened. The shape therefore looks very compressed, and the area changed from 44 (in question 1 and parts a and b) to 33.
 
 # Question 4
 
@@ -509,3 +511,9 @@ ggplot() +
   ylim(-2,22) +
   scale_color_manual("", values=c("darkred", "grey"))
 ```
+
+## Discussion
+From questions 1 to 4 we see the capabilities of R in creating and altering images using matrices, data frames, and more. Starting from doing basic matrix formation, multiplication, and determinants we moved to shearing in question 3. Here, we see how changing the identity matrix, M, slightly can stretch resulting shapes through matrix multiplication (whether that is vertically, horizontally, or both). Lastly, in question 4, a data frame was used to create the ladder in figure 7 from the table values given in part a. Interestingly, by then storing the columns of x and y from the table as columns in a $22x2$ matrix, we could then use shearing again to alter the original ladder to slant and look as if it is leaning (figure 8).
+
+## Citations
+Only used @R and related packages for this assignment.
